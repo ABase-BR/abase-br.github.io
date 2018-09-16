@@ -1,2 +1,1 @@
-# abase-br.github.io
-ABase
+# GreenMindLabs ABase
