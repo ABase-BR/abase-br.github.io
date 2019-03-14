@@ -66,7 +66,7 @@ Precisamos de permissão de super usuário para usar o **ifconfig** , para isso 
 sudo ifconfig
 ```
 
-![Verificando adaptador](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-01.png)
+![Verificando adaptador](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-01.png)
 
 
 Nesse caso a minha está com o nome **wlp2s0**.
@@ -84,21 +84,21 @@ Antes de iniciar o **modo monitor** vamos checar os processos a fim de interromp
 airmon-ng check kill
 ```
 
-![Checar os processos e interrompendo](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-02.png)
+![Checar os processos e interrompendo](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-02.png)
 
 Vamos iniciar o modo monitor
 ```sh
 airmon-ng start wlp2s0
 ```
 
-![Iniciando modo monitor](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-03.png)
+![Iniciando modo monitor](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-03.png)
 
 Podemos verificar nosso adaptador novamente usando o **ifconfig**.
 ```sh
 sudo ifconfig
 ```
 
-![Verificando adaptadores](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-04.png)
+![Verificando adaptadores](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-04.png)
 
 Agora apareceu a rede **wlp2s0mon** , vamos precisar disso para o próximo passo.
 
@@ -116,7 +116,7 @@ Em outras aulas vamos usar esse domínios para realizar alguns ataques , já que
 
 Podemos ver a rede **emporiolife** , precisamos prestar atenção em alguns pontos.
 
-![Escolhendo alvo](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-05.png)
+![Escolhendo alvo](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-05.png)
 
 
 São eles
@@ -151,7 +151,7 @@ Agora que o **airodump-ng** ta rodando e salvando tudo em um arquivo vamos preci
 Podemos forçar isso da seguinte forma.
 
 
-![Capturando handshake](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-06.png)
+![Capturando handshake](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-06.png)
 
 ### Realizando deauth usando aireplay-ng 
 O **aireplay-ng** é uma ferramenta muito interessante , ela pode nos auxiliar em diversas coisas.
@@ -173,13 +173,13 @@ Vamos montar nosso ataque para desautenticação , vamos usar
 sudo aireplay-ng --deauth 5 -a 18:D6:C7:D2:D3:CC -c AC:D0:74:20:CB:20 wlp2s0mon
 ```
 
-![Desautenticação](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-07.png)
+![Desautenticação](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-07.png)
 
 
 Após realizar o ataque de dasautenticação podemos ver o **airodump-ng** e checar se apareceu no canto superior direito a mensagem. **WPA handshake: 18:D6:C7:D2:D3:CC**.
 
 Veja na imagem a baixo
-![WPA handshake](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-08.png)
+![WPA handshake](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-08.png)
 
 
 Podemos fechar o **airodump-ng**.
@@ -188,7 +188,7 @@ Podemos fechar o **airodump-ng**.
 Vamos listar os arquivos gerados , podemos dar um **ls** para listar o diretório.
 
 Veja a imagem a baixo.
-![Arquivos obtidos](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-09.png)
+![Arquivos obtidos](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-09.png)
 
 
 Podemos ver os arquivos com o nome **emporiolife**.
@@ -232,6 +232,6 @@ sudo aircrack-ng  emporiolife-01.cap -w alvo-emporiolife.txt
 ```
 
 
-![Senha obtida com o aircrack-ng](https://abase.greenmindlabs.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-10.png)
+![Senha obtida com o aircrack-ng](https://wiki.juliusec.com/images/wifi/Quebrando-redes-WPA2/lab-wifi-10.png)
 
 
